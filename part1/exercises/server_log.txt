@@ -1,0 +1,5 @@
+2024-10-01 10:00 user1 login
+2024-10-01 10:05 user2 logout
+2024-10-01 10:10 user1 view
+2024-10-01 10:15 user1 logout
+2024-10-01 10:20 user2 login
