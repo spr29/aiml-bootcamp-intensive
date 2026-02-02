@@ -1,0 +1,26 @@
+# Part 5: Agentic RAG Requirements
+
+# Core
+openai==1.54.0
+httpx==0.27.2
+boto3==1.34.47
+python-dotenv==1.0.1
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.4
+
+# Visualization
+matplotlib==3.8.3
+
+# Utilities
+rank-bm25==0.2.2
+
+# Agent Framework
+langgraph==0.2.0
+langchain-openai==0.2.0
+langchain-core==0.3.0
+
+# Jupyter
+jupyter==1.0.0
+ipykernel==6.29.0
