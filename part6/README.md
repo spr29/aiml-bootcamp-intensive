@@ -56,6 +56,25 @@ pip install openai python-dotenv jupyter
 python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 ```
 
+### Troubleshooting: SSL Errors on Windows
+
+If you get `disabling truststore since ssl support is missing` or `no matching distribution found` errors during pip install:
+
+```bash
+# Fix 1: Install OpenSSL in conda first
+conda install openssl certifi ca-certificates -y
+# Then retry the pip installs above
+
+# Fix 2: If still failing, use trusted host flag
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org transformers peft trl bitsandbytes accelerate datasets
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org sentence-transformers rouge-score scikit-learn matplotlib
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org openai python-dotenv jupyter
+
+# Fix 3: Install what you can via conda-forge, rest via pip
+conda install -c conda-forge openai python-dotenv jupyter scikit-learn matplotlib -y
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org transformers peft trl bitsandbytes accelerate datasets sentence-transformers rouge-score
+```
+
 ### Option B: venv (Linux/Mac/Colab)
 
 ```bash
