@@ -1,0 +1,35 @@
+# Part 6: Fine-Tuning LLMs
+
+# Core ML
+torch>=2.1.0
+transformers>=4.40.0
+accelerate>=0.28.0
+
+# Fine-Tuning
+peft>=0.10.0
+trl>=0.8.0
+bitsandbytes>=0.41.0
+
+# Data
+datasets>=2.18.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Evaluation
+rouge-score>=0.1.2
+sentence-transformers>=2.5.0
+scikit-learn>=1.4.0
+
+# Visualization
+matplotlib>=3.8.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.29.0
+
+# LLM API (for synthetic data gen + LLM-as-judge)
+openai>=1.54.0
+httpx>=0.27.0
