@@ -35,16 +35,42 @@ Fine-tune an open-source LLM for e-commerce customer service, building on the RA
 
 ## Setup
 
+### Option A: Conda (Recommended for Windows)
+
+Conda handles CUDA/cuDNN automatically -- no need to install CUDA toolkit separately.
+
 ```bash
-# Create virtual environment
+# Create environment
+conda create -n finetune python=3.11 -y
+conda activate finetune
+
+# Install PyTorch with CUDA (handles CUDA automatically)
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Install fine-tuning and ML libraries
+pip install transformers peft trl bitsandbytes accelerate datasets
+pip install sentence-transformers rouge-score scikit-learn matplotlib
+pip install openai python-dotenv jupyter
+
+# Verify GPU
+python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+```
+
+### Option B: venv (Linux/Mac/Colab)
+
+```bash
 python -m venv venv
-source venv/bin/activate      # Linux/Mac
-# venv\Scripts\activate       # Windows
-
-# Install dependencies
+source venv/bin/activate
 pip install -r requirements.txt
+```
 
-# Configure environment
+### Google Colab
+
+All notebooks work on Colab (free tier T4 GPU is sufficient). No local setup needed -- just upload the notebooks and run the `!pip install` cells.
+
+### Configure Environment
+
+```bash
 cp .env.example .env
 # Edit .env with your HF token and LLM API credentials
 
