@@ -6,7 +6,8 @@
     "warmup_steps": 10,
     "logging_steps": 10,
     "save_steps": 50,
-    "fp16": true,
+    "fp16":false, 
+    "bf16":true,
     "max_seq_length": 512,
     "optim": "paged_adamw_32bit"
 }
