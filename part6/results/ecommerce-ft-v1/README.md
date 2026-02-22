@@ -4,8 +4,8 @@ library_name: transformers
 model_name: ecommerce-ft-v1
 tags:
 - generated_from_trainer
-- sft
 - trl
+- sft
 licence: license
 ---
 
